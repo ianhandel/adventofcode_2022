@@ -7,3 +7,7 @@
 [Rucksac reorganisation](https://github.com/ianhandel/adventofcode_2022/blob/main/day_03/advent_of_code_03.md)
 
 [Camp cleanup](https://github.com/ianhandel/adventofcode_2022/blob/main/day_04/advent_of_code_04.md)
+
+Supply stacks - not done
+
+[Tuning trouble](https://github.com/ianhandel/adventofcode_2022/blob/main/day_06/advent_of_code_06.md)
