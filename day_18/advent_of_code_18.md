@@ -26,6 +26,8 @@ test <- tribble(
 input <- read_csv(here("day_18", "input.txt"), col_names = c("x", "y", "z"))
 ```
 
+### Part 1
+
 ``` r
 delta  <- tribble(~dx,  ~dy, ~dz,
                    0,    0,   0.5,
@@ -50,3 +52,5 @@ input |>
     ##   <int> <int>
     ## 1     1  4320
     ## 2     2 12660
+
+### Part 2
