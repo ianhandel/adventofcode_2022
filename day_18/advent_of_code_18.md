@@ -41,9 +41,12 @@ input |>
   select(x, y, z) |> 
   group_by(x, y, z) |> 
   mutate(nn = n()) |> 
-  ungroup() |> 
-  filter(nn == 1) |> 
-  nrow()
+  ungroup() |>
+  count(nn)
 ```
 
-    ## [1] 4320
+    ## # A tibble: 2 × 2
+    ##      nn     n
+    ##   <int> <int>
+    ## 1     1  4320
+    ## 2     2 12660

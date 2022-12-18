@@ -46,8 +46,13 @@ input |>
   select(x, y, z) |> 
   group_by(x, y, z) |> 
   mutate(nn = n()) |> 
-  ungroup() |> 
-  filter(nn == 1) |> 
-  nrow()
+  ungroup() |>
+  count(nn)
+
 ```
+
+```{r}
+
+```
+
 
