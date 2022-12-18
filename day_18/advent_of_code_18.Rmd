@@ -1,0 +1,53 @@
+---
+title: "🎄🎄🎄 day 18  🎄🎄🎄"
+output: github_document
+---
+```{r , include = FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+test <- tribble(
+                ~x, ~y, ~z,
+                2,2,2,
+                1,2,2,
+                3,2,2,
+                2,1,2,
+                2,3,2,
+                2,2,1,
+                2,2,3,
+                2,2,4,
+                2,2,6,
+                1,2,5,
+                3,2,5,
+                2,1,5,
+                2,3,5)
+
+input <- read_csv(here("day_18", "input.txt"), col_names = c("x", "y", "z"))
+```
+
+```{r}
+delta  <- tribble(~dx,  ~dy, ~dz,
+                   0,    0,   0.5,
+                   0,    0,  -0.5,
+                   0,    0.5, 0,
+                   0,   -0.5, 0,
+                   0.5,  0,   0,
+                  -0.5,  0,   0)
+
+input |> 
+  crossing(delta) |> 
+  mutate(x = x + dx, y = y + dy, z = z + dz) |> 
+  select(x, y, z) |> 
+  group_by(x, y, z) |> 
+  mutate(nn = n()) |> 
+  ungroup() |> 
+  filter(nn == 1) |> 
+  nrow()
+```
+
