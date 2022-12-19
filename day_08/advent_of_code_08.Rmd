@@ -1,0 +1,26 @@
+---
+title: "🎄🎄🎄 day 08  🎄🎄🎄"
+output: github_document
+---
+```{r , include = FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+nummat <- function(mat){
+  m <- as.numeric(mat)
+  matrix(m, nrow = nrow(mat))
+}
+
+test <- c(30373L, 25512L, 65332L, 33549L, 35390L) |> 
+  str_split("", simplify = TRUE) |> 
+  nummat()
+```
+```{r}
+
+```
+
